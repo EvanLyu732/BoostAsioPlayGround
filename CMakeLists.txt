@@ -9,16 +9,32 @@ include_directories(${Boost_INCLUDE_DIRS})
 link_directories(${Boost_LIBRARY_DIRS})
 
 
-add_executable(client_server
+add_executable(client
     src/client.cpp
 )
 
-target_include_directories(client_server
+add_executable(server
+    src/server.cpp
+)
+
+target_include_directories(client
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
 
-target_link_libraries(client_server
+target_include_directories(server
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_link_libraries(client
+    PRIVATE
+      ${Boost_LIBRARY_DIRS}
+    #   ${Boost_FILESYSTEM_LIBRARY}
+    #   ${Boost_SYSTEM_LIBRARY}
+)
+
+target_link_libraries(server
     PRIVATE
       ${Boost_LIBRARY_DIRS}
     #   ${Boost_FILESYSTEM_LIBRARY}
