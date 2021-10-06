@@ -3,6 +3,7 @@
 
 using namespace boost;
 
+//write some function
 void writeToSocket(asio::ip::tcp::socket& sock)
 {
     std::string buf = "hello";
@@ -16,6 +17,14 @@ void writeToSocket(asio::ip::tcp::socket& sock)
         );
     }
 }
+
+
+//write whole
+// void writeToSocketEnhanced(asio::ip::tcp::socket& sock)
+// {
+//     std::string buf = "hello";
+//     asio::write(sock, asio::buffer(buf));
+// }
 
 
 int main()

@@ -53,6 +53,11 @@ add_executable(client_write_to_sock
     src/client_write_to_sock.cpp
 )
 
+add_executable(server_read_some_data
+    src/server_read_some_data.cpp
+)
+
+
 target_include_directories(client
     PRIVATE
       ${Boost_INCLUDE_DIRS}
@@ -105,6 +110,11 @@ target_include_directories(stream_buf
 
 
 target_include_directories(client_write_to_sock
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_include_directories(server_read_some_data
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
@@ -167,4 +177,7 @@ target_link_libraries(client_write_to_sock
       ${Boost_INCLUDE_DIRS}
 )
 
-
+target_link_libraries(server_read_some_data
+    PRIVATE
+      ${Boost_LIBRARY_DIRS}
+)
