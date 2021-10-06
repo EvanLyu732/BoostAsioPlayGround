@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 project(boost_asio_play)
 
+set (CMAKE_CXX_STANDARD 11)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
@@ -55,6 +56,10 @@ add_executable(client_write_to_sock
 
 add_executable(server_read_some_data
     src/server_read_some_data.cpp
+)
+
+add_executable(async_write
+    src/async_write.cpp
 )
 
 
@@ -119,6 +124,11 @@ target_include_directories(server_read_some_data
       ${Boost_INCLUDE_DIRS}
 )
 
+target_include_directories(async_write
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
 target_link_libraries(client
     PRIVATE
       ${Boost_LIBRARY_DIRS}
@@ -178,6 +188,11 @@ target_link_libraries(client_write_to_sock
 )
 
 target_link_libraries(server_read_some_data
+    PRIVATE
+      ${Boost_LIBRARY_DIRS}
+)
+
+target_link_libraries(async_write
     PRIVATE
       ${Boost_LIBRARY_DIRS}
 )
