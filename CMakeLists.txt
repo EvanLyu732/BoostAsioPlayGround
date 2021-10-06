@@ -33,6 +33,18 @@ add_executable(client2
     src/client_2.cpp
 )
 
+add_executable(acceptor
+    src/acceptor_socket.cpp
+)
+
+add_executable(send_hello
+    src/send_hello.cpp
+)
+
+add_executable(rec_buffer
+    src/rec_buffer.cpp
+)
+
 target_include_directories(client
     PRIVATE
       ${Boost_INCLUDE_DIRS}
@@ -49,7 +61,7 @@ target_include_directories(active_socket
 )
 
 target_include_directories(passive_socket
-    PRIVATe
+    PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
 
@@ -59,6 +71,21 @@ target_include_directories(dns_name_resolve
 )
 
 target_include_directories(client2
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_include_directories(acceptor
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_include_directories(send_hello
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_include_directories(rec_buffer
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
@@ -95,4 +122,20 @@ target_link_libraries(client2
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
+
+target_link_libraries(acceptor
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_link_libraries(send_hello
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_link_libraries(rec_buffer
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
 
