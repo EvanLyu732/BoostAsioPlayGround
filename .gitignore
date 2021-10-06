@@ -45,3 +45,5 @@ _deps
 
 /.vscode
 *.idx
+
+/bin
