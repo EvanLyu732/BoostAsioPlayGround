@@ -17,7 +17,7 @@ int main()
     asio::ip::tcp::resolver::iterator it = 
         resolver.resolve(resolver_query, ec);
 
-    if (ec != 0) {
+    if (ec) {
         std::cout << "Failed to resolve a DNS name."
             << "Error code = " << ec.value()
             << ". Message = " << ec.message();

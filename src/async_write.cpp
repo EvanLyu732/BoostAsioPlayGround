@@ -27,7 +27,7 @@ void callback(const boost::system::error_code& ec,std::size_t bytes_transferred,
         s->total_bytes_written,
         s->buf.length() -
         s->total_bytes_written),
-        std::bind(callback, std::placeholders::_1
+        std::bind(callback, std::placeholders::_1,
             std::placeholders::_2, s));
 }
 
