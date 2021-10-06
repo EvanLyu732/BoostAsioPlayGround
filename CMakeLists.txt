@@ -29,6 +29,10 @@ add_executable(dns_name_resolve
     src/dns_name_resolve.cpp
 )
 
+add_executable(client2
+    src/client_2.cpp
+)
+
 target_include_directories(client
     PRIVATE
       ${Boost_INCLUDE_DIRS}
@@ -45,11 +49,16 @@ target_include_directories(active_socket
 )
 
 target_include_directories(passive_socket
-    PRIVATE
+    PRIVATe
       ${Boost_INCLUDE_DIRS}
 )
 
 target_include_directories(dns_name_resolve
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_include_directories(client2
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
@@ -80,3 +89,10 @@ target_link_libraries(dns_name_resolve
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
+
+
+target_link_libraries(client2
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
