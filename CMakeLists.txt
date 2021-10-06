@@ -45,6 +45,14 @@ add_executable(rec_buffer
     src/rec_buffer.cpp
 )
 
+add_executable(stream_buf
+    src/stream_buf.cpp
+)
+
+add_executable(client_write_to_sock
+    src/client_write_to_sock.cpp
+)
+
 target_include_directories(client
     PRIVATE
       ${Boost_INCLUDE_DIRS}
@@ -86,6 +94,17 @@ target_include_directories(send_hello
 )
 
 target_include_directories(rec_buffer
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_include_directories(stream_buf
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+
+target_include_directories(client_write_to_sock
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
@@ -134,6 +153,16 @@ target_link_libraries(send_hello
 )
 
 target_link_libraries(rec_buffer
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_link_libraries(stream_buf
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_link_libraries(client_write_to_sock
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
