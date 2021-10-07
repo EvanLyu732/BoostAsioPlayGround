@@ -78,6 +78,10 @@ add_executable(shut_down_socket_client
     src/shut_down_socket_client.cpp
 )
 
+add_executable(client_sync_tcp
+    src/client_sync_tcp.cpp
+)
+
 
 target_include_directories(client
     PRIVATE
@@ -161,6 +165,12 @@ target_include_directories(shut_down_socket_client
 )
 
 target_include_directories(shut_down_socket_server
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+
+target_include_directories(client_sync_tcp
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
@@ -249,6 +259,12 @@ target_link_libraries(shut_down_socket_server
 )
 
 target_link_libraries(shut_down_socket_client
+    PRIVATE
+      ${Boost_LIBRARY_DIRS}
+)
+
+
+target_link_libraries(client_sync_tcp
     PRIVATE
       ${Boost_LIBRARY_DIRS}
 )
