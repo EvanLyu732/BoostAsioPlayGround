@@ -66,6 +66,10 @@ add_executable(async_read
     src/async_read.cpp
 )
 
+add_executable(cancel_async
+    src/cancel_async.cpp
+)
+
 
 target_include_directories(client
     PRIVATE
@@ -134,6 +138,11 @@ target_include_directories(async_write
 )
 
 target_include_directories(async_read
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_include_directories(cancel_async
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
@@ -207,6 +216,11 @@ target_link_libraries(async_write
 )
 
 target_link_libraries(async_read
+    PRIVATE
+      ${Boost_LIBRARY_DIRS}
+)
+
+target_link_libraries(cancel_async
     PRIVATE
       ${Boost_LIBRARY_DIRS}
 )
