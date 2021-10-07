@@ -82,6 +82,10 @@ add_executable(client_sync_tcp
     src/client_sync_tcp.cpp
 )
 
+add_executable(sync_iterate_server
+    src/sync_iterate_server.cpp
+)
+
 
 target_include_directories(client
     PRIVATE
@@ -171,6 +175,12 @@ target_include_directories(shut_down_socket_server
 
 
 target_include_directories(client_sync_tcp
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+
+target_include_directories(sync_iterate_server
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
@@ -265,6 +275,12 @@ target_link_libraries(shut_down_socket_client
 
 
 target_link_libraries(client_sync_tcp
+    PRIVATE
+      ${Boost_LIBRARY_DIRS}
+)
+
+
+target_link_libraries(sync_iterate_server
     PRIVATE
       ${Boost_LIBRARY_DIRS}
 )
