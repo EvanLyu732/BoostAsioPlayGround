@@ -70,6 +70,14 @@ add_executable(cancel_async
     src/cancel_async.cpp
 )
 
+add_executable(shut_down_socket_server
+    src/shut_down_socket_server.cpp
+)
+
+add_executable(shut_down_socket_client
+    src/shut_down_socket_client.cpp
+)
+
 
 target_include_directories(client
     PRIVATE
@@ -143,6 +151,16 @@ target_include_directories(async_read
 )
 
 target_include_directories(cancel_async
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_include_directories(shut_down_socket_client
+    PRIVATE
+      ${Boost_INCLUDE_DIRS}
+)
+
+target_include_directories(shut_down_socket_server
     PRIVATE
       ${Boost_INCLUDE_DIRS}
 )
@@ -221,6 +239,16 @@ target_link_libraries(async_read
 )
 
 target_link_libraries(cancel_async
+    PRIVATE
+      ${Boost_LIBRARY_DIRS}
+)
+
+target_link_libraries(shut_down_socket_server
+    PRIVATE
+      ${Boost_LIBRARY_DIRS}
+)
+
+target_link_libraries(shut_down_socket_client
     PRIVATE
       ${Boost_LIBRARY_DIRS}
 )
